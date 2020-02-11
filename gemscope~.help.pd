@@ -1,5 +1,4 @@
 #N canvas 257 349 471 382 10;
-#X obj 66 261 gemscope~;
 #X msg 53 104 \; pd dsp 1;
 #X obj 209 215 sig~;
 #X obj 211 182 / 127;
@@ -11,11 +10,12 @@
 #X text 115 230 Y;
 #X text 147 233 LUM;
 #X text 244 58 https://github.com/jyg/gemscope-/;
-#X text 6 23 gemscope~ : a gem-based XY-scope to draw lissajous curves
-with brightness modulation;
 #X text 198 288 width controls the width of the beam;
-#X connect 2 0 0 2;
+#X text 6 23 gemscope : a gem-based XY-scope to draw lissajous curves
+with brightness modulation;
+#X obj 66 261 gemscope~;
+#X connect 1 0 12 2;
+#X connect 2 0 1 0;
 #X connect 3 0 2 0;
-#X connect 4 0 3 0;
-#X connect 5 0 0 0;
-#X connect 6 0 0 1;
+#X connect 4 0 12 0;
+#X connect 5 0 12 1;

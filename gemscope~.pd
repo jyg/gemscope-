@@ -4,7 +4,7 @@
 #X msg 63 24 destroy;
 #X obj 36 -19 inlet;
 #X obj 36 3 sel 1;
-#X msg 36 46 FSAA 4 \, dimen 256 256 \, fullscreen 0 \, color 0 0 0
+#X msg 36 46 FSAA 4 \, dimen 800 600 \, fullscreen 0 \, color 0 0 0
 \, frame 60 \, create \, 1;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -12,7 +12,7 @@
 #X connect 3 1 1 0;
 #X connect 4 0 0 0;
 #X restore 245 193 pd gem.init;
-#X obj 167 123 tgl 15 0 empty empty OFF -3 -5 0 10 -257985 -1 -1 0
+#X obj 167 123 tgl 15 0 empty empty _ON -3 -5 0 10 -257985 -1 -1 1
 1;
 #X text 485 124 Depth of Field simulation by Guido;
 #X text 485 143 http://guidotamino.it/projects/depth-of-field/;
@@ -21,10 +21,10 @@
 #X obj 199 282 inlet~;
 #X obj 13 275 gemhead;
 #X obj 103 144 hsl 70 15 0 0.99 0 0 empty empty persistence -1 8 0
-10 -262144 -1 -1 0 1;
-#X floatatom 136 122 5 1 8 0 width - -, f 5;
+10 -262144 -1 -1 6400 1;
+#X floatatom 136 122 5 1 8 0 width - -;
 #X obj 100 181 sqrt;
-#N canvas 483 270 542 615 scope 0;
+#N canvas 483 270 542 615 scope 1;
 #X obj 15 116 gemframebuffer;
 #X obj 16 213 translateXYZ 0 0 -4;
 #X obj 15 7 inlet;
@@ -48,10 +48,10 @@
 #X obj 280 380 square 4;
 #X obj 422 514 rectangle 7 4;
 #X obj 9 437 pix_shader zToLum;
-#X obj 410 549 square 4;
 #X text 70 297 feedback for persistence;
 #X obj 197 9 inlet persistence;
 #X text 273 495 if you want to change aspect-ratio ->, f 21;
+#X obj 410 549 rectangle 6 4;
 #X connect 0 0 14 0;
 #X connect 0 1 7 1;
 #X connect 1 0 16 0;
@@ -67,7 +67,7 @@
 #X connect 10 0 7 0;
 #X connect 10 0 14 0;
 #X connect 11 0 12 0;
-#X connect 12 0 23 0;
+#X connect 12 0 26 0;
 #X connect 13 0 7 0;
 #X connect 13 1 12 1;
 #X connect 13 1 14 1;
@@ -78,7 +78,7 @@
 #X connect 17 0 19 0;
 #X connect 18 0 17 1;
 #X connect 22 0 3 0;
-#X connect 25 0 18 0;
+#X connect 24 0 18 0;
 #X restore 13 329 pd scope;
 #X text 434 65 gemscope~ https://github.com/jyg/gemscope-;
 #X text 432 96 inspired by;
